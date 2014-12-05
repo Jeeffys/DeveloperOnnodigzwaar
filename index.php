@@ -1,4 +1,5 @@
 <?php
+  // test
 	include 'lib/index_functions.php';
 	$index = new Index;
 	$page = $index->get('page');
