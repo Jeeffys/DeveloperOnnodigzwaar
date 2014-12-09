@@ -26,4 +26,15 @@ class Index {
 				break;
 		}
 	}
-}	
+}
+
+class Proeven {
+
+	function proef(){
+		$xmlstring = file_get_contents('xml/mediadeveloper.xml');
+		$xml = simplexml_load_string($xmlstring);
+		$json = json_encode($xml);
+		$array = json_decode($json, true);
+		return $array;
+	}
+}

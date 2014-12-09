@@ -1,7 +1,8 @@
 <?php
   // test
-	include 'lib/index_functions.php';
+	include 'lib/functions.php';
 	$index = new Index;
+  $proef = new Proeven;
 	$page = $index->get('page');
 ?>
 
@@ -27,10 +28,11 @@
           <li class="dropdown">
           	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaaken<span class="caret"></span></a>
 	          	<ul class="dropdown-menu" role="menu">
-		            <li><a href="index.php?page=Proeve&id=1">Kerntaak 1. (Ontwerpen van de applicatie, (cross)media-uiting of game) </a></li>
-		            <li><a href="index.php?page=Proeve&id=2">Kerntaak 2. (Realiseren van de applicatie, (cross)media-uiting of game)</a></li>
-		            <li><a href="index.php?page=Proeve&id=3">Kerntaak 3. (Implementeren van de applicatie of (cross)media-uiting)</a></li>
-		            <li><a href="index.php?page=Proeve&id=4">Kerntaak 4. (Onderhouden en beheren van de applicatie, (cross)media-uiting of game)</a></li>
+                <?php foreach($proef->proef()['kerntaken'] as $kerntaken){ ?>
+                    <?php foreach($kerntaken as $kerntaak){ ?>   
+                       <li><a href="index.php?page=Proeve&title=<?=$kerntaak['@attributes']['titel']?>">Kerntaak <?=$kerntaak['@attributes']['volgnummer']?>. <?=$kerntaak['@attributes']['titel']?></a></li>
+                    <?php } ?>
+                <?php } ?>
 	          	</ul>
         	</li>         
         	<li><a href="index.php?page=contact">Contact</a></li>
