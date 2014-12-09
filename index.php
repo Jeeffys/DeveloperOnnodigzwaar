@@ -25,15 +25,12 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
-          	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">vaardigheden <span class="caret"></span></a>
+          	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaaken<span class="caret"></span></a>
 	          	<ul class="dropdown-menu" role="menu">
-		            <li><a href="index.php?page=Proeve&id=1">vaardigheid 1.0 </a></li>
-		            <li><a href="index.php?page=Proeve&id=2">vaardigheid 2.0</a></li>
-		            <li><a href="index.php?page=Proeve&id=3">vaardigheid 3.0</a></li>
-		            <li><a href="index.php?page=Proeve&id=4">vaardigheid 4.0</a></li>
-		            <li><a href="index.php?page=Proeve&id=5">vaardigheid 5.0</a></li>
-		            <li><a href="index.php?page=Proeve&id=6">vaardigheid 6.0</a></li>
-		            <li><a href="index.php?page=Proeve&id=7">vaardigheid 7.0</a></li>
+		            <li><a href="index.php?page=Proeve&id=1">Kerntaak 1. (Ontwerpen van de applicatie, (cross)media-uiting of game) </a></li>
+		            <li><a href="index.php?page=Proeve&id=2">Kerntaak 2. (Realiseren van de applicatie, (cross)media-uiting of game)</a></li>
+		            <li><a href="index.php?page=Proeve&id=3">Kerntaak 3. (Implementeren van de applicatie of (cross)media-uiting)</a></li>
+		            <li><a href="index.php?page=Proeve&id=4">Kerntaak 4. (Onderhouden en beheren van de applicatie, (cross)media-uiting of game)</a></li>
 	          	</ul>
         	</li>         
         	<li><a href="index.php?page=contact">Contact</a></li>
@@ -45,7 +42,7 @@
       <?php $index->get_content($page); ?>
 
       <div class="footer">
-        <p>&copy; Het onnodigzwaar theam 2014-2015</p>
+        <p>&copy; onnodigzwaar.nl | 2014-2015</p>
       </div>
 
     </div> <!-- /container -->
