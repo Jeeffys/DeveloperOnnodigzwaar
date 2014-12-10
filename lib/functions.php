@@ -30,11 +30,21 @@ class Index {
 
 class Proeven {
 
-	function proef(){
-		$xmlstring = file_get_contents('xml/mediadeveloper.xml');
-		$xml = simplexml_load_string($xmlstring);
+	private $proeven = false;
+
+	public function haalAlleProevenOp() {
+		$xmlString = file_get_contents('xml/mediadeveloper.xml');
+		$xml = simplexml_load_string($xmlString);
 		$json = json_encode($xml);
 		$array = json_decode($json, true);
-		return $array;
+
+		$this->proeven = $array;
+	}
+
+	function alleProeven(){
+		if($this->proeven === false)
+			$this->haalAlleProevenOp();
+
+		return $this->proeven;
 	}
 }

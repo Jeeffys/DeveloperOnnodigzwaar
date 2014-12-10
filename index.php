@@ -2,10 +2,11 @@
   // test
 	include 'lib/functions.php';
 	$index = new Index;
-  $proef = new Proeven;
+  $proeven = new Proeven;
+  $proeven->haalAlleProevenOp();
+
 	$page = $index->get('page');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,9 +27,9 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
-          	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaaken<span class="caret"></span></a>
+          	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaken<span class="caret"></span></a>
 	          	<ul class="dropdown-menu" role="menu">
-                <?php foreach($proef->proef()['kerntaken'] as $kerntaken){ ?>
+                <?php foreach($proeven->alleProeven()['kerntaken'] as $kerntaken){ ?>
                     <?php foreach($kerntaken as $kerntaak){ ?>   
                        <li><a href="index.php?page=Proeve&title=<?=$kerntaak['@attributes']['titel']?>">Kerntaak <?=$kerntaak['@attributes']['volgnummer']?>. <?=$kerntaak['@attributes']['titel']?></a></li>
                     <?php } ?>
@@ -38,7 +39,7 @@
         	<li><a href="index.php?page=contact">Contact</a></li>
         </ul>
 
-        <h3 class="text-muted">Proeve van bekwaamheid</h3>
+        <h3 class="text-muted">Proeve van Bekwaamheid</h3>
       </div>
 
       <?php $index->get_content($page); ?>
