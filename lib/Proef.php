@@ -5,6 +5,7 @@ class Proef {
 
 	public function __construct($title, $kerntaken) {
 		$this->title = $title;
+		$this->titel = $title;
 		$this->kerntaken = $kerntaken;
 	}
 

@@ -1,23 +1,23 @@
 <?php
-  require 'lib/proeven.php';
-  require 'lib/Page.php';
-  require 'lib/pageFetcher.php';
-	include 'lib/functions.php';
+    require 'lib/Kerntaken.php';
+    require 'lib/Page.php';
+    require 'lib/pageFetcher.php';
+    include 'lib/functions.php';
 
-  include 'lib/Proef.php';
-  include 'lib/Kerntaak.php';
-  include 'lib/Werkproces.php';
-  require 'lib/Competentie.php';
-  require 'lib/Vaardigheid.php';
+    include 'lib/Proef.php';
+    include 'lib/Kerntaak.php';
+    include 'lib/Werkproces.php';
+    require 'lib/Competentie.php';
+    require 'lib/Vaardigheid.php';
 
-  $proeven = new Proeven;
-  $proeven->haalAlleProevenOp();
+    $objKerntaken = new Kerntaken;
+    $objKerntaken->haalAlleKerntakenOp();
 
-	$pageFetcher = new PageFetcher($proeven);
-  $pageFetcher->setSource(
-    ( isset ( $_GET['page'] ) ? $_GET['page'] : 'home' )
-  );
-  $page = $pageFetcher->fetch();
+    $pageFetcher = new PageFetcher($objKerntaken);
+        $pageFetcher->setSource(
+        ( isset ( $_GET['page'] ) ? $_GET['page'] : 'home' )
+        );
+    $page = $pageFetcher->fetch();
 
 ?>
 <!DOCTYPE html>
@@ -42,14 +42,15 @@
           <li class="dropdown">
           	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaken<span class="caret"></span></a>
 	          	<ul class="dropdown-menu" role="menu">
-                <?php foreach($proeven->alleProeven()['kerntaken'] as $kerntaken){ ?>
+                <?php foreach($objKerntaken->alleKerntaken()['kerntaken'] as $kerntaken){ ?>
                     <?php foreach($kerntaken as $kerntaak){ ?>   
                        <li><a href="index.php?page=proeve&title=<?=slugify($kerntaak['@attributes']['titel'])?>">Kerntaak <?=$kerntaak['@attributes']['volgnummer']?>. <?=$kerntaak['@attributes']['titel']?></a></li>
                     <?php } ?>
                 <?php } ?>
 	          	</ul>
         	</li>         
-        	<li><a href="index.php?page=contact">Contact</a></li>
+            <li><a href="index.php?page=contact">Contact</a></li>
+            <li><a href="index.php?page=dashboard">Dashboard</a></li>
         </ul>
 
         <h3 class="text-muted">Proeve van Bekwaamheid</h3>

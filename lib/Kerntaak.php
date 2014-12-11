@@ -5,6 +5,8 @@ class Kerntaak {
 
 	public function __construct($data) {
 		$this->kerntaak = $data;
+
+		$this->titel = $this->kerntaak['@attributes']['titel'];
 	}
 
 	public function getTitle() {

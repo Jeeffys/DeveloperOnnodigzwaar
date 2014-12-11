@@ -2,6 +2,10 @@
 class Competentie {
 	public function __construct($competentie) {
 		$this->competentie = $competentie;
+
+		$this->titel = $this->competentie['@attributes']['titel'];
+		$this->code = $this->competentie['@attributes']['code'];
+		$this->referentie = $this->competentie['@attributes']['referentie'];
 	}
 
 	public function getTitle() {

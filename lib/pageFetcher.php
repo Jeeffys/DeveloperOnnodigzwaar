@@ -7,10 +7,10 @@ class PageFetcher {
 		'proeve' => 'Pagina van de proeve van bekwaamheid'
 	);
 
-	private $proeven;
+	private $kerntaken;
 	
-	public function __construct(Proeven $proeven) {
-		$this->proeven = $proeven;
+	public function __construct(Kerntaken $kerntaken) {
+		$this->kerntaken = $kerntaken;
 	}
 
 	public function setSource($source) {

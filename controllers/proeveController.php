@@ -1,5 +1,5 @@
 <?php
-$proef = $this->proeven->haalVoorPagina($_GET['title']);
+$proef = $this->kerntaken->haalVoorPagina($_GET['title']);
 
 $kerntaken = $proef->kerntaken();
 
