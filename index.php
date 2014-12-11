@@ -1,11 +1,24 @@
 <?php
-  // test
+  require 'lib/proeven.php';
+  require 'lib/Page.php';
+  require 'lib/pageFetcher.php';
 	include 'lib/functions.php';
-	$index = new Index;
+
+  include 'lib/Proef.php';
+  include 'lib/Kerntaak.php';
+  include 'lib/Werkproces.php';
+  require 'lib/Competentie.php';
+  require 'lib/Vaardigheid.php';
+
   $proeven = new Proeven;
   $proeven->haalAlleProevenOp();
 
-	$page = $index->get('page');
+	$pageFetcher = new PageFetcher($proeven);
+  $pageFetcher->setSource(
+    ( isset ( $_GET['page'] ) ? $_GET['page'] : 'home' )
+  );
+  $page = $pageFetcher->fetch();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?php echo $index->get_pageTitle($page); ?></title>
+    <title><?php echo $page->getTitle() ?></title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
@@ -31,7 +44,7 @@
 	          	<ul class="dropdown-menu" role="menu">
                 <?php foreach($proeven->alleProeven()['kerntaken'] as $kerntaken){ ?>
                     <?php foreach($kerntaken as $kerntaak){ ?>   
-                       <li><a href="index.php?page=Proeve&title=<?=$kerntaak['@attributes']['titel']?>">Kerntaak <?=$kerntaak['@attributes']['volgnummer']?>. <?=$kerntaak['@attributes']['titel']?></a></li>
+                       <li><a href="index.php?page=proeve&title=<?=slugify($kerntaak['@attributes']['titel'])?>">Kerntaak <?=$kerntaak['@attributes']['volgnummer']?>. <?=$kerntaak['@attributes']['titel']?></a></li>
                     <?php } ?>
                 <?php } ?>
 	          	</ul>
@@ -42,7 +55,7 @@
         <h3 class="text-muted">Proeve van Bekwaamheid</h3>
       </div>
 
-      <?php $index->get_content($page); ?>
+      <?php echo $page->getContent() ?>
 
       <div class="footer">
         <p>&copy; onnodigzwaar.nl | 2014-2015</p>
