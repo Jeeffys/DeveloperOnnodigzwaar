@@ -33,6 +33,7 @@ $array = json_decode($json, true);
 							<li>
 								Competentie <?=$competentie['@attributes']['code']?>: <u><?=$competentie['@attributes']['titel'] ?></u>:
 
+								<br /><strong>Vaardigheden</strong>
 								<ol>
 									<?php foreach($competentie['vaardigheden'] as $vaardigheden): ?>
 										<?php foreach($vaardigheden as $vaardigheid): ?>

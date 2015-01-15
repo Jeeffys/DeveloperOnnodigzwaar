@@ -9,6 +9,7 @@
     include 'lib/Werkproces.php';
     require 'lib/Competentie.php';
     require 'lib/Vaardigheid.php';
+    require 'lib/Indicator.php';
 
     $objKerntaken = new Kerntaken;
     $objKerntaken->haalAlleKerntakenOp();
@@ -39,7 +40,8 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
+          <li><a href="index.php?page=beoordelen">Beoordelen</a></li>
+          <!--<li class="dropdown">
           	<a href="index.php?page=Proeve" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kerntaken<span class="caret"></span></a>
 	          	<ul class="dropdown-menu" role="menu">
                 <?php foreach($objKerntaken->alleKerntaken()['kerntaken'] as $kerntaken){ ?>
@@ -48,7 +50,7 @@
                     <?php } ?>
                 <?php } ?>
 	          	</ul>
-        	</li>         
+        	</li>-->       
             <li><a href="index.php?page=contact">Contact</a></li>
             <li><a href="index.php?page=dashboard">Dashboard</a></li>
         </ul>

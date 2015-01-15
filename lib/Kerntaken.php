@@ -10,7 +10,7 @@ class Kerntaken {
 		$json = json_encode($xml);
 		$array = json_decode($json, true);
 
-		$this->kerntaken = $array;
+		$this->kerntaken = xmlstr_to_array($xmlString);
 	}
 
 	function alleKerntaken(){

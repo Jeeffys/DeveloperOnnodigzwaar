@@ -23,4 +23,8 @@ class Competentie {
 
 		return $aVaardigheden;
 	}
+
+	public function indicator() {
+		return new Indicator($this->competentie['indicator']);
+	}
 }

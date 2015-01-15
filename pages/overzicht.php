@@ -13,10 +13,17 @@
 			<?php foreach($werkproces->competenties() as $competentie) { ?>
 				<h5><?=$competentie->code ?>: <?=$competentie->titel?> (<?=$competentie->referentie ?>)</h5>
 
+				<!--
+					<br />
+				<h4>Vaardigheden</h4>
 				<?php foreach($competentie->vaardigheden() as $vaardigheid) { ?>
 					<h6><?=$vaardigheid->titel ?> (<?=$vaardigheid->referentie ?>)</h6>
-				<?php } ?>
+				<?php } ?>-->
 
+				<h5>Indicator</h5>
+				<?php echo $competentie->indicator()->indicator ?>
+
+				<br />
 				<br />
 			<?php } ?>
 		<?php } ?>
