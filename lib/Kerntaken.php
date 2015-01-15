@@ -44,4 +44,18 @@ class Kerntaken {
 
 		return array();
 	}
+
+	public function haalVoorId($id) {
+		foreach($this->kerntaken['kerntaken'] as $kerntaken) {
+			foreach($kerntaken as $kerntaak) {
+				if(slugify($kerntaak['@attributes']['volgnummer']) == $id) {
+					$this->kerntaak = $kerntaak['@attributes']['titel'];
+					
+					return new Proef($kerntaak['@attributes']['titel'], $kerntaken);
+				}
+			}
+		}
+
+		return array();
+	}
 }
