@@ -37,5 +37,7 @@
 		<option value="4">Guido Romeijn</option>
 	</select></p>
 
+	<input type="submit" value="Genereer pfd">
+
 
 </form>

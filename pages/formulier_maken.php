@@ -1,3 +1,10 @@
+	<h1>get kerntaak</h1>
+	<h3>Werkproces (get werkproces nummer) |  (get werkproces vraag) Stelt de vraag en/of informatiebehoefte vast</h3>
+		<p>1. XML</p>
+		<p>2. XML</p>
+		<p>3. XML</p>
+		<p>4. XML</p>
+	<br>
 <form method="POST">
 	<br>
 	<br>
@@ -54,5 +61,7 @@
 		<option value="3">3</option>
 		<option value="4">4</option>
 	</select>
-	<input type="text" name="eis_criterium_3" placeholder="Vul criterium in..." /> <br>
+	<input type="text" name="eis_criterium_3" placeholder="Vul criterium in..." /> <br><br>
+
+	<input type="submit" value="Opslaan">
 </form>

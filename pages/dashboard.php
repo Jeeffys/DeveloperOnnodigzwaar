@@ -1,11 +1,10 @@
 <h3>Dashboard</h3>
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.php?page=dashboard/template">
-        Pdf template maken
-      </a>
-    </div>
-  </div>
-</nav>
+<h2>pdf template maken</h2>
+kerntaak 1.0<br><br>
+
+werkproces<br>
+	werkproces <a href="index.php?page=formulier_maken">Maken/Wijzigen</a><br>
+	werkproces<br>
+	werkproces<br>
+	
