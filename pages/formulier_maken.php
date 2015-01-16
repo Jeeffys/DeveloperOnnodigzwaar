@@ -1,33 +1,3 @@
-<?php foreach($this->kerntaken->haalVoorId('1') as $proef) { ?>
-	<h2><?=$proef->titel ?></h2>
-
-	<?php foreach($proef->kerntaken() as $kerntaak) { ?>
-		<h3><?=$kerntaak->titel?></h3>
-			<br />
-
-		<?php foreach($kerntaak->werkprocessen() as $werkproces) { ?>
-			<h4>Werkproces <?=$werkproces->volgnummer ?>. <?=$werkproces->titel ?> (<?=$werkproces->referentie?>)</h4>
-
-			<?php foreach($werkproces->competenties() as $competentie) { ?>
-				<h5><?=$competentie->code ?>: <?=$competentie->titel?> (<?=$competentie->referentie ?>)</h5>
-
-				<!--
-					<br />
-				<h4>Vaardigheden</h4>
-				<?php foreach($competentie->vaardigheden() as $vaardigheid) { ?>
-					<h6><?=$vaardigheid->titel ?> (<?=$vaardigheid->referentie ?>)</h6>
-				<?php } ?>-->
-
-				<h5>Indicator</h5>
-				<?php echo $competentie->indicator()->indicator ?>
-
-				<br />
-				<br />
-			<?php } ?>
-		<?php } ?>
-	<?php } ?>
-<?php } ?>
-
 <form method="POST">
 	<br>
 	<br>
